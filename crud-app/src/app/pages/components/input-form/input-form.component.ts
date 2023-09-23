@@ -40,7 +40,13 @@ export class InputFormComponent {
     getData.push(this._commonService.formGrp)
     this._commonService.saveDataToLocal('employeeData', getData);
     this._commonService.EmployeeData = getData;
-
-
+    this.resetForm();
+  }
+  resetForm() {
+    this._commonService.formGrp = {
+      Name : "",
+      Designation: "",
+      Salary: "",
+    }
   }
 }

@@ -14,6 +14,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonService } from 'src/services/common.service';
 import { MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { MatSnackBarModule} from '@angular/material/snack-bar'
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatIconModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

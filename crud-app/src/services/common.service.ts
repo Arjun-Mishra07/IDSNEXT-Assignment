@@ -16,6 +16,11 @@ export class CommonService {
     localStorage.setItem(key, JSON.stringify(data));
   }
   getDataFromLocal(key:string) {
-   return JSON.parse(localStorage.getItem(key) || "")
+   return JSON.parse(localStorage.getItem(key) || "[]")
+  }
+  deleteData(index:number) {
+    this.EmployeeData.splice(index, 1);
+    this.saveDataToLocal('employeeData', this.EmployeeData);
+    this.EmployeeData = this.getDataFromLocal('employeeData');
   }
 }
