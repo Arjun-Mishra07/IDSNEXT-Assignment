@@ -1,0 +1,25 @@
+
+<div>
+    <div>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput [(ngModel)]="_commonService.formGrp.Name" placeholder="Name">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Designation</mat-label>
+            <mat-select [(ngModel)]="_commonService.formGrp.Designation">
+                <mat-option [value]="option" *ngFor="let option of Designations">{{ option }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Salary</mat-label>
+            <input type="number" matInput [(ngModel)]="_commonService.formGrp.Salary" placeholder="Salary">
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-button>Reset</button>
+        <button mat-button (click)="SaveData()">Save</button>
+    </div>
+</div>
