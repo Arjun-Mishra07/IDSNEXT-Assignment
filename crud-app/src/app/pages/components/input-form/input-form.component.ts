@@ -50,6 +50,24 @@ export class InputFormComponent {
     }
   }
   UpdateData() {
+    if(!this._commonService.formGrp.Name) {
+      this.toaster.open("Name is required", "", {
+        duration: 2 * 1000
+      });
+      return;
+    }
+    if(!this._commonService.formGrp.Designation) {
+      this.toaster.open("Designation is required", "", {
+        duration: 2 * 1000
+      });
+      return;
+    }
+    if(!this._commonService.formGrp.Salary) {
+      this.toaster.open("Salary is required", "", {
+        duration: 2 * 1000
+      });
+      return;
+    }
     if(this._commonService.EditIndex !== null) {
       this._commonService.EmployeeData[this._commonService.EditIndex] = this._commonService.formGrp;
       this._commonService.saveDataToLocal('employeeData', this._commonService.EmployeeData);
