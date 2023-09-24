@@ -49,4 +49,15 @@ export class InputFormComponent {
       Salary: "",
     }
   }
+  UpdateData() {
+    if(this._commonService.EditIndex !== null) {
+      this._commonService.EmployeeData[this._commonService.EditIndex] = this._commonService.formGrp;
+      this._commonService.saveDataToLocal('employeeData', this._commonService.EmployeeData);
+      this._commonService.EmployeeData = this._commonService.getDataFromLocal('employeeData');
+
+    }
+    this.resetForm();
+    this._commonService.EditIndex = null;
+    this._commonService.Mode = 'Create';
+  }
 }

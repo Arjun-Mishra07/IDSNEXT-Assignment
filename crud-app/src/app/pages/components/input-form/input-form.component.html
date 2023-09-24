@@ -1,9 +1,9 @@
 
-<div>
-    <div>
+<div class="input_box">
+    <div class="inputs">
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input type="text" matInput [(ngModel)]="_commonService.formGrp.Name" placeholder="Name">
+            <input type="text" matInput [(ngModel)]="_commonService.formGrp.Name">
         </mat-form-field>
     
         <mat-form-field>
@@ -15,11 +15,13 @@
     
         <mat-form-field>
             <mat-label>Salary</mat-label>
-            <input type="number" matInput [(ngModel)]="_commonService.formGrp.Salary" placeholder="Salary">
+            <input type="number" matInput [(ngModel)]="_commonService.formGrp.Salary">
         </mat-form-field>
     </div>
-    <div>
-        <button mat-button (click)="resetForm()">Reset</button>
-        <button mat-button (click)="SaveData()">Save</button>
+    <div class="btn_box">
+        <button mat-button (click)="resetForm()" class="reset_btn">Reset</button>
+        <button *ngIf="_commonService.Mode == 'Create'" mat-button (click)="SaveData()" class="save_btn">Save</button>
+        <button *ngIf="_commonService.Mode == 'Update'" mat-button (click)="UpdateData()"class="save_btn">Update</button>
+
     </div>
 </div>
